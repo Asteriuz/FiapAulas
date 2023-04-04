@@ -24,23 +24,24 @@ public class Teste {
 		
 		//Criar um objeto do tipo Ebook
 		Ebook supremacyGames = new Ebook();
+		supremacyGames.admin = true;
 		//Colocar informa��es dentro do objeto
-		supremacyGames.nome = "Supremacy Games";
-		supremacyGames.isbn = "12345";
-		supremacyGames.genero = List.of("REINCARNATION", "EVOLUTION", "CULTIVATION", "COMEDY", "ACTION", "RAREBLOODLINE", "ROMANCE");
-		supremacyGames.idioma = "Inglês";
-		supremacyGames.quantidadePagina = 27_408;
-		supremacyGames.valor = 0.0;
-		supremacyGames.resumo = "Felix Maxwell was destined to be a loser, born on one of the weakest races and on the least favorable of situations, he was forced to face adversity head-on as he traveled across the vast universe where dangers laid in every corner, one day traveling in hopes of riches he stumbled upon a ruin where a supreme being laid imprisoned, in a stroke of bad luck the being laid its eyes on him and tried to take over his body, forcing itself upon him.";
-		supremacyGames.editora = atlas;
+		supremacyGames.setNome("Supremacy Games");;
+		supremacyGames.setIsbn("12345");
+		supremacyGames.setGenero(List.of("REINCARNATION", "EVOLUTION", "CULTIVATION", "COMEDY", "ACTION", "RAREBLOODLINE", "ROMANCE"));
+		supremacyGames.setIdioma("Inglês");
+		supremacyGames.setQuantidadePagina(27_408);
+		supremacyGames.setValor(0.0);
+		supremacyGames.setResumo("Felix Maxwell was destined to be a loser, born on one of the weakest races and on the least favorable of situations, he was forced to face adversity head-on as he traveled across the vast universe where dangers laid in every corner, one day traveling in hopes of riches he stumbled upon a ruin where a supreme being laid imprisoned, in a stroke of bad luck the being laid its eyes on him and tried to take over his body, forcing itself upon him.");
+		supremacyGames.setEditora(atlas);
 		
-		
-		System.out.println(churros.nome);
-
-		System.out.println(supremacyGames.nome);
-		
-		System.out.println(supremacyGames.valor);
-		System.out.println(supremacyGames.editora);
-		
+		System.out.println(supremacyGames.getNome());
+		System.out.println(supremacyGames.getIsbn());
+		System.out.println(supremacyGames.getGenero());
+		System.out.println(supremacyGames.getIdioma());
+		System.out.println(supremacyGames.getQuantidadePagina());
+		System.out.println(supremacyGames.getValor());
+		System.out.println(supremacyGames.getResumo());
+		System.out.println(supremacyGames.getEditora());
 	}
 }
