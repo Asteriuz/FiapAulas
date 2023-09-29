@@ -18,12 +18,12 @@
     {
       "id": 5,
       "nome": "Headset",
-      "preco": 250
+      "preco": "200"
     },
     {
-      "id": "6d44067c-dcb8-4007-9dce-3f25793dab89",
-      "nome": "Teclado Gamer",
-      "preco": 60
+      "id": 6,
+      "nome": "Teclado",
+      "preco": 150
     }
   ]
 }

@@ -6,12 +6,12 @@ import "./index.css";
 // BLOCO DE ROTAS
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import EditarProdutos from "./routes/EditarProdutos.jsx";
-import Home from "./routes/Home.jsx";
-import Produtos from "./routes/Produtos.jsx";
-import ExcluirProdutos from "./routes/ExcluirProdutos.jsx";
-import AdicionarProdutos from "./routes/AdicionarProdutos.jsx";
-import Error404 from "./routes/Error404.jsx";
+import Home from "./routes/Home/Home.js";
+import Produtos from "./routes/Produtos/index.js";
+import AdicionarProdutos from "./routes/AdicionarProdutos/AdicionarProdutos.js";
+import Error404 from "./routes/Error404/Error404.js";
+import EditarProdutos from "./routes/EditarProdutos/index.js";
+import ExcluirProdutos from "./routes/ExcluirProdutos/index.js";
 
 // Criando o objeto de rotas
 const router = createBrowserRouter([

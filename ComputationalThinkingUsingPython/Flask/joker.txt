@@ -1,0 +1,47 @@
+Tabela: Jogadores
+
+id_jogador (INT)
+nome (VARCHAR)
+posicao (VARCHAR)
+data_nascimento (DATE)
+nacionalidade (VARCHAR)
+altura (DECIMAL)
+peso (DECIMAL)
+
+Tabela: Partidas
+id_partida (INT)
+data_partida (DATE)
+local_partida (VARCHAR)
+adversario (VARCHAR)
+resultado (VARCHAR)
+
+Tabela: Estatísticas de Jogadores em Partidas
+id_estatistica (INT)
+id_jogador (INT)
+id_partida (INT)
+gols_marcados (INT)
+assistencias (INT)
+cartoes_amarelos (INT)
+cartoes_vermelhos (INT)
+chutes_a_gol (INT)
+defesas (INT) (para goleiros)
+minutos_em_campo (INT)
+
+Tabela: Campeonatos
+id_campeonato (INT)
+nome_campeonato (VARCHAR)
+temporada (VARCHAR)
+pais_regiao (VARCHAR)
+data_inicio (DATE)
+data_termino (DATE)
+descricao (VARCHAR)
+organizador (VARCHAR)
+tipo_campeonato (VARCHAR)
+
+Tabela: Times
+id_time (INT)
+nome_time (VARCHAR)
+pais_origem (VARCHAR)
+ano_fundacao (INT)
+treinador (VARCHAR)
+estadio (VARCHAR)
