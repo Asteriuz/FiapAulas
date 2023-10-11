@@ -8,15 +8,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.banco.exception.IdNotFoundException;
-import br.com.fiap.banco.factory.ConnectionFactory;
 import br.com.fiap.banco.model.Produto;
 
 //Realiza as ações de CRUD (Create, Read, Update, Delete) no banco de dados
 public class ProdutoDao {
 
-	public void cadastrar(Produto produto) throws ClassNotFoundException, SQLException {
+	private Connection conn;
 
-		Connection conn = ConnectionFactory.getConnection();
+	public ProdutoDao(Connection conn) throws ClassNotFoundException, SQLException {
+		this.conn = conn;
+	}
+
+	public void cadastrar(Produto produto) throws ClassNotFoundException, SQLException {
 
 		// Criar o objeto com o comando SQL configurável
 		PreparedStatement stm = conn.prepareStatement("INSERT INTO"
@@ -36,7 +39,6 @@ public class ProdutoDao {
 
 	public List<Produto> listar() throws ClassNotFoundException, SQLException {
 		// Criar a conexão com o banco de dados
-		Connection conn = ConnectionFactory.getConnection();
 
 		// Criar o comando SQL
 		PreparedStatement stm = conn
@@ -61,7 +63,6 @@ public class ProdutoDao {
 
 	public Produto pesquisar(int id) throws ClassNotFoundException, SQLException, IdNotFoundException {
 		// Conexão
-		Connection conn = ConnectionFactory.getConnection();
 
 		// PreparedStatement (com select)
 		PreparedStatement stm = conn.prepareStatement("select * from"
@@ -96,7 +97,7 @@ public class ProdutoDao {
 	}
 
 	public void atualizar(Produto produto) throws ClassNotFoundException, SQLException, IdNotFoundException {
-		Connection conn = ConnectionFactory.getConnection();
+
 		PreparedStatement stm = conn.prepareStatement(
 				"update t_produto set nm_produto = ?, nr_estoque = ?, vl_venda = ?, vl_compra = ? where cd_produto = ?");
 		stm.setString(1, produto.getNome());
@@ -112,21 +113,12 @@ public class ProdutoDao {
 	}
 
 	public void remover(int id) throws ClassNotFoundException, SQLException, IdNotFoundException {
-		Connection conn = ConnectionFactory.getConnection();
+
 		PreparedStatement stm = conn.prepareStatement("delete from t_produto where cd_produto = ?");
 		stm.setInt(1, id);
 		int linha = stm.executeUpdate();
 		if (linha == 0) {
 			throw new IdNotFoundException("Produto não encontrado");
 		}
-		// q: should i close the connection here?
-		// a: no, because the connection is being used by other methods
-		// and it will be closed by the ConnectionFactory
-		// q: when?
-		// a: when the program ends
-		// q: thanks very much
-		// a: you're welcome
-		// q: bye
-		// a: bye
 	}
 }
